@@ -1,0 +1,4 @@
+sqlalchemy
+pandas
+#cx_Oracle requires https://visualstudio.microsoft.com/visual-cpp-build-tools/ - install then restart
+oracledb
