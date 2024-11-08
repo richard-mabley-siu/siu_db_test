@@ -2,7 +2,7 @@
 Useful common functions for Salukis.  In the future, this will be in the form of a [pip package](https://pip.pypa.io/en/stable/getting-started/), but for now we'll clone this repo into our project directory.
 
 ## Oracle DB Link
-We are using the Oracle Instant Client ("thick mode") for all connections to the AIS/SIS databases.  The connection to the database is handled via the Python database toolkit, [SQLAlchemy](https://www.sqlalchemy.org/).  The examples in this code also the [Pandas](https://pandas.pydata.org/) data manipulation library to transform SQL queries to Python datatables.  This helper library (db.py) facilitates the setup of DB connections with these tools.
+We are using the Oracle Instant Client ("thick mode") for all connections to the AIS/SIS databases.  The connection to the database is handled via the Python database toolkit, [SQLAlchemy](https://www.sqlalchemy.org/).  The examples in this code also uses the [Pandas](https://pandas.pydata.org/) data manipulation library to transform SQL queries to Python datatables.  This helper library (db.py) facilitates the setup of DB connections with these tools.
 
 ### Instructions
 
