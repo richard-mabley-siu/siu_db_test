@@ -8,7 +8,8 @@ import platform
 # https://www.oracle.com/database/technologies/instant-client/winx64-64-downloads.html
 # https://www.computerhope.com/issues/ch000549.htm#windows10
 
-#for linux, add ' LD_LIBRARY_PATH="/usr/lib/oracle/19.25/client64/lib '  to your  ~/.bash_profile or  ~/.bashrc file. '
+#for linux, add ' LD_LIBRARY_PATH="/usr/lib/oracle/19.25/client64/lib '  to your  ~/.bash_profile or  ~/.bashrc file.  you may need to logout/login and kill
+#old terminals.'
 
 def connect_oracle(host_name, service_name, username, password, port):
     if platform.system() == 'Windows':
