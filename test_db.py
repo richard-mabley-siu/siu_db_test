@@ -1,7 +1,7 @@
 # %%
 import db
-import os
 import pandas as pd
+import getpass
 
 # Connect to SIS-DEV
 # %%
@@ -10,14 +10,14 @@ import pandas as pd
 # user = input("Enter Username")
 # pw = input("Enter Pass")
 # or use an environmental variable...
-# user = 'BANINST1'
 # pw = os.getenv('oracle_pw')
 
+# Connect to AIS
 host = 'patch-db.siu.edu'
 service = 'PCH'
 port = 1541
 user = 'APPS'
-pw = input("Enter Pass")
+pw = getpass.getpass()
 
 
 # %%
