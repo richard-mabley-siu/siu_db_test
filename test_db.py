@@ -4,18 +4,26 @@ import os
 import pandas as pd
 
 # %%
-host = 'sisdb-test.eis.siu.edu'
-service = 'DEV.eis.siu.edu'
-user = input("Enter Username")
-pw = input("Enter Pass")
+# host = 'sisdb-test.eis.siu.edu'
+# service = 'DEV.eis.siu.edu'
+# user = input("Enter Username")
+# pw = input("Enter Pass")
 # or use an environmental variable...
+# user = 'BANINST1'
 # pw = os.getenv('oracle_pw')
 
-# %%
-engine = db.connect_oracle(host_name=host, service_name = service, username= user, password=pw)
+host = 'patch-db.siu.edu'
+service = 'PCH'
+port = 1541
+user = 'APPS'
+pw = input("Enter Pass")
+
 
 # %%
-query = 'SELECT * FROM SPRIDEN FETCH FIRST 10 ROWS ONLY'
+engine = db.connect_oracle(host_name=host, service_name = service, username= user, password=pw, port=port)
+
+# %%
+query = 'SELECT * FROM APPS.fnd_user FETCH FIRST 10 ROWS ONLY'
 #test query
 test_df = pd.read_sql_query(query, engine)
 
