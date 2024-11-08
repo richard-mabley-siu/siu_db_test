@@ -3,6 +3,7 @@ import db
 import os
 import pandas as pd
 
+# Connect to SIS-DEV
 # %%
 # host = 'sisdb-test.eis.siu.edu'
 # service = 'DEV.eis.siu.edu'

@@ -8,6 +8,8 @@ import platform
 # https://www.oracle.com/database/technologies/instant-client/winx64-64-downloads.html
 # https://www.computerhope.com/issues/ch000549.htm#windows10
 
+#for linux, add ' LD_LIBRARY_PATH="/usr/lib/oracle/19.25/client64/lib '  to your  ~/.bash_profile or  ~/.bashrc file. '
+
 def connect_oracle(host_name, service_name, username, password, port):
     if platform.system() == 'Windows':
         oracle_instant_client_path = os.getenv('ORACLE_INSTANT_CLIENT_PATH')
@@ -16,7 +18,11 @@ def connect_oracle(host_name, service_name, username, password, port):
         else:
             raise Exception('You must set an environmental variable called ORACLE_INSTANT_CLIENT_PATH.  See comments on db.py for more info.')
     else:
-        thick_mode = {}
+        oracle_instant_client_path = os.getenv('LD_LIBRARY_PATH')
+        if oracle_instant_client_path != '':
+            thick_mode = {}
+        else: 
+            raise Exception('You must set an environmental variable called LD_LIBRARY_PATH in your ~/.bash_profile or ~/.bashrc file.  See comments on db.py for more info.')
 
     DIALECT = 'oracle'
     SQL_DRIVER = 'oracledb'
